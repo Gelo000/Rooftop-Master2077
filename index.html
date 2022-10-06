@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rooftop Master 2077</title>
+  <link rel="stylesheet" href="rooftop.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="button.css" type="text/css" media="screen">
+  <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <style>
+    html{
+      height:100%;
+      background: linear-gradient(0deg, #000000,#131f1e) no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-y: hidden;
+      
+    }
+    #rooftopgame{
+          background-color: #e7e4e4;
+          display: block;
+          margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+  <div id="rooftopgame" name="rooftopgame" class="wrapper">
+    <div id="virtualscreen" class="virtual bluescreen" style="opacity: 40%;"></div>
+    <div id="virtualscreen2" class="virtual redscreen"></div>
+    <div class="sound sound-off"></div>
+    <div id="menu" style="z-index: 4;" >
+      <div id="virtualscreen" class="virtual bluescreen" style="z-index: 4; opacity: 40%;"></div>
+      <!-- <div id="virtualscreen2" class="virtual redscreen" style="z-index: 4; display: none;"></div> -->
+      <div id="progress" style="opacity: 50%;">
+        <div id="percent" style="letter-spacing: 3px; color: #00e1ff;">Initializing: <span id="p"></span></div>
+        <progress id="progress-bar" value="0"></progress>
+      </div>
+
+      <div id="main" style="z-index: 5; overflow-y: hidden; overflow-x: hidden;">
+        <!-- <h1>Ge takbo</h1> -->
+        
+        <ul style="margin-top: 270px;">
+          <div class="wrap">
+          <button id="play" class="button play" style="opacity: 70%;"><a href="javascript:void(0)"></a>Start</button>
+          </div>
+          <li><a href="javascript:void(0)" class="button2 credits" style="z-index: 5; margin-left: 440px; margin-top: -330px; border-radius: 20px;">Credits</a></li>
+        </ul>
+      </div>
+      <div id="credits">
+        <ul>
+          <li class="artwork">Character design and art: Kandi Runner Animate a Vector Sprite Walk (Modified)<br>Platform tiles and background: Sci-Fi Platformer Game Tileset<br>A Night Scene of Saturn by QAuZ on DeviantArt</li>
+        </ul>
+        <ul>
+          <li class="music">BGM: DJ Striden - Levels<br>Jump sound: Beat Stomper<br>Gameover sound: Futuristic HUD Sound Design Blake Sanchez</li>
+        </ul>
+        <ul>
+          <li class="developer">Developers: John Gabriel Taroy<br>Angelo Milan Santos<br>Cedrick Regalario <br> (ALL MUSIC/IMAGES IS NOT OURS | Editor: PhotoshopCS6 and PicsArt)</li>
+        </ul>
+        <a href="javascript:void(0)" class="button2 back" style="z-index: 10; margin-left: 225px; margin-top: -5px; border-radius: 20px;">Back</a>
+      </div>
+    </div>
+    <canvas id="canvas" width="800" height="480">
+      <p>You're browser does not support the required functionality to play this game.</p>
+      <p>Please update to a modern browser such as <a href="www.google.com/chrome/‎">Google Chrome</a> to play.</p>
+    </canvas>
+    <div id="game-over">
+      <h2 style="color: rgb(255, 0, 0); font-family: Lucida Console; margin-top: 60px; opacity: 80%;">You ran <span id="score"></span> meters!</h2>
+      <!-- <a href="javascript:void(0)" class="button restart">Try again?</a> -->
+      <br>
+      <br>
+      <!-- <a href="javascript:location.reload(true)" class="button2 restart"></a> -->
+      <div class="wrap">
+        <button class="buttonerror restart" style="opacity: 80%; margin-top: -40px;"><a href="javascript:void(0)"></a>Play Again</button>
+        </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="rooftop.js"></script>
+  <script type="text/javascript">
+    var btn = document.querySelector(".button");
+    var btn2 = document.querySelector(".restart");
+    // var thissound = document.getElementById('mySound');
+    // var thissound2 = document.getElementById('mySound2');
+    
+    
+      btn2.addEventListener("mouseover", function() {
+      this.textContent = "Reconnect!";
+      // thissound.play();
+      })
+      btn2.addEventListener("mouseout", function() {
+        this.textContent = "Play Again";
+      }) 
+    
+      btn.addEventListener("mouseover", function() {
+      this.textContent = "Get Ready!";
+      })
+      btn.addEventListener("mouseout", function() {
+        this.textContent = "Start";
+      }) 
+  </script>
+</body>
+</html>
